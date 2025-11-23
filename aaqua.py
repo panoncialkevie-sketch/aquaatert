@@ -1,3 +1,14 @@
+import subprocess
+import sys
+
+def install_geopy():
+    try:
+        import geopy
+    except ImportError:
+        subprocess.check_call([sys.executable, "-m", "pip", "install", "geopy"])
+
+install_geopy()
+
 import streamlit as st
 import pandas as pd
 import numpy as np
